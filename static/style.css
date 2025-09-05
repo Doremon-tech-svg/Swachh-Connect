@@ -1,0 +1,361 @@
+/* ================================
+   Swachh Connect – Pro MVP Styles
+   Framework-free, accessible, responsive
+=================================== */
+
+:root{
+  /* Brand */
+  --primary: #16a34a;        /* emerald-600 */
+  --primary-600: #15803d;    /* hover/darker */
+  --accent: #0ea5e9;         /* cyan-ish accent (subtle) */
+
+  /* Surface & Text */
+  --bg: #0b1220;             /* deep navy for header gradient edges */
+  --page: #f6f8fb;           /* page background */
+  --surface: #ffffff;        /* cards, sections */
+  --text: #111827;           /* gray-900 */
+  --muted: #6b7280;          /* gray-500 */
+  --border: #e5e7eb;         /* gray-200 */
+  --ring: rgba(22,163,74,.25);/* focus ring */
+
+  /* Effects */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
+  --shadow-md: 0 6px 16px rgba(0,0,0,.10);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,.18);
+  --radius: 16px;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  margin:0; padding:0;
+}
+
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 10% -10%, #e6fff0 0%, transparent 40%),
+              radial-gradient(900px 500px at 110% -20%, #e6f4ff 0%, transparent 40%),
+              var(--page);
+  line-height: 1.5;
+}
+
+/* ---------------- Header / Nav ---------------- */
+
+header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: linear-gradient(135deg, var(--primary) 0%, #0b8f4a 40%, #0b6c4a 100%);
+  color:#fff;
+  box-shadow: var(--shadow-md);
+}
+
+header .bar{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  gap:16px;
+}
+
+h1{
+  font-size: 1.4rem;
+  margin: 0;
+  letter-spacing: .3px;
+  display: flex; align-items: center; gap:10px;
+}
+
+h1::before{
+  content: "🧹";
+  font-size: 1.2rem;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+nav a{
+  color:#eafcf0;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: all .18s ease;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+nav a:hover{
+  background: rgba(255,255,255,.12);
+  color:#fff;
+  transform: translateY(-1px);
+}
+
+/* ---------------- Layout ---------------- */
+
+main{
+  max-width: 980px;
+  margin: 32px auto 64px;
+  padding: 0 20px;
+}
+
+.section{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+  margin: 16px 0;
+}
+
+.card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 24px;
+  margin: 20px auto;
+}
+
+h2{
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+  letter-spacing: .2px;
+}
+
+p{ color: var(--text); }
+
+.muted{ color: var(--muted); }
+
+/* ---------------- Buttons ---------------- */
+
+button, .btn{
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(22,163,74,.28);
+  transition: transform .08s ease, box-shadow .18s ease, background .18s ease;
+}
+
+button:hover, .btn:hover{
+  background: var(--primary-600);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(22,163,74,.32);
+}
+
+button:focus-visible, .btn:focus-visible{
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+a.btn{
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* Link buttons in content */
+a.inline{
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+a.inline:hover{ text-decoration: underline; }
+
+/* ---------------- Lists ---------------- */
+
+ul{
+  list-style: none;
+  padding-left: 0;
+  margin: 12px 0;
+}
+ul li{
+  padding: 10px 12px;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  margin: 8px 0;
+  background: #fafafa;
+}
+
+/* ---------------- Forms / Quiz ---------------- */
+
+form{
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+label, .q{
+  display:block;
+  font-weight:700;
+  margin: 12px 0 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="file"],
+textarea,
+select{
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+textarea{ min-height: 120px; }
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+/* Radios: simple, accessible */
+input[type="radio"]{
+  width: 18px; height: 18px;
+  accent-color: var(--primary);
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.radio-row{
+  display:flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 6px 0 16px;
+}
+.radio-row label{
+  display:flex; align-items:center; gap:8px;
+  padding: 8px 12px;
+  border:1px solid var(--border);
+  border-radius: 12px;
+  background:#fff;
+  cursor:pointer;
+  transition: box-shadow .15s ease, transform .05s ease;
+}
+.radio-row label:hover{
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+/* ---------------- Alerts / Messages ---------------- */
+
+.alert{
+  margin: 16px 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid;
+  background: #fff;
+  font-weight: 600;
+}
+
+.alert.error{
+  border-color: #fca5a5;
+  color: #991b1b;
+  background: #fff1f2;
+}
+
+.alert.success{
+  border-color: #86efac;
+  color: #065f46;
+  background: #ecfdf5;
+}
+
+/* ---------------- Certificate Styling ---------------- */
+
+.certificate{
+  background: #fff;
+  border: 2px solid #d1fae5;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.certificate::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  background:
+    radial-gradient(600px 120px at 20% -10%, rgba(22,163,74,.20), transparent 60%),
+    radial-gradient(600px 120px at 80% -10%, rgba(14,165,233,.16), transparent 60%);
+  pointer-events:none;
+}
+
+.certificate h2{
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.cert-line{
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 2px;
+  margin: 10px 0 18px;
+}
+
+/* ---------------- Footer ---------------- */
+
+footer{
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ---------------- Utilities ---------------- */
+
+.center{ text-align:center; }
+.max-w-sm{ max-width: 520px; margin: 0 auto; }
+.mt-1{ margin-top: 4px; }
+.mt-2{ margin-top: 8px; }
+.mt-3{ margin-top: 12px; }
+.mt-4{ margin-top: 16px; }
+.mt-6{ margin-top: 24px; }
+.mb-2{ margin-bottom: 8px; }
+.mb-4{ margin-bottom: 16px; }
+.grid{
+  display:grid;
+  gap: 16px;
+}
+.grid-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 720px){
+  .grid-2{ grid-template-columns: 1fr; }
+  nav{ gap:8px; }
+}
+
+/* ---------------- Nice defaults for your current HTML ---------------- */
+
+main > *:not(.section):not(.card):not(form){
+  /* Give plain content blocks some breathing room even without classes */
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Make the top bar markup work with the new styles even if you don't change HTML */
+header > .bar ~ *{ display:none; } /* safety: only the first .bar in header should be visible */

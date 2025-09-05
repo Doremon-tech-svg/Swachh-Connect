@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="card max-w-sm">
+    <h2>📸 Report Waste</h2>
+    <p class="muted">See illegal dumping or uncollected waste? Report it here with a photo and location.</p>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for msg in messages %}
+          <div class="alert error">{{ msg }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" enctype="multipart/form-data">
+      <label>Description</label>
+      <textarea name="description" required></textarea>
+
+      <label>Location</label>
+      <input type="text" name="location" placeholder="e.g. Near Market Street" required>
+
+      <label>Upload Photo</label>
+      <input type="file" name="photo" accept="image/*" required>
+
+      <div class="mt-4 center">
+        <button type="submit">Submit Report</button>
+      </div>
+    </form>
+  </section>
+{% endblock %}

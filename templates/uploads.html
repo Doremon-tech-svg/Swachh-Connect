@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="card">
+    <h2>🗂️ Reported Waste Uploads</h2>
+    <p class="muted">Here are the photos of waste reports submitted by citizens.</p>
+
+    {% if images %}
+      <div class="grid grid-2 mt-4">
+        {% for img in images %}
+          <div class="card center">
+            <img src="{{ url_for('uploaded_file', filename=img) }}" 
+                 alt="Waste Report" 
+                 style="max-width:100%; border-radius:12px;">
+            <p class="muted mt-2">{{ img }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="muted mt-4">No reports yet. Be the first to <a href="/report" class="inline">submit one</a>!</p>
+    {% endif %}
+  </section>
+{% endblock %}

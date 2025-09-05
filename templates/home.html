@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <!-- Hero Section -->
+  <section class="card center">
+    <h2>Welcome to Swachh Connect</h2>
+    <p class="muted mt-2 max-w-sm">
+      A smart digital platform to empower citizens and urban bodies to work 
+      together for a cleaner India through <strong>waste segregation</strong>, 
+      <strong>training</strong>, and <strong>community participation</strong>.
+    </p>
+    <div class="mt-4">
+      <a href="/training" class="btn">Start Training</a>
+      <a href="/quiz" class="btn" style="background: var(--accent);">Take Quiz</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="grid grid-2 mt-6">
+    <div class="card">
+      <h3>📚 Citizen Training</h3>
+      <p class="muted mt-2">
+        Learn how to segregate waste at source, compost at home, and reuse plastics.
+      </p>
+      <a href="/training" class="btn mt-3">Start Training</a>
+    </div>
+
+    <div class="card">
+      <h3>📝 Quiz & Certificate</h3>
+      <p class="muted mt-2">
+        Test your knowledge through a quick quiz and instantly get a digital certificate.
+      </p>
+      <a href="/quiz" class="btn mt-3">Take Quiz</a>
+    </div>
+
+    <div class="card">
+      <h3>📸 Report Waste</h3>
+      <p class="muted mt-2">
+        See illegal dumping? Snap a photo and upload it. Reports go directly to local bodies.
+      </p>
+      <a href="/report" class="btn mt-3">Report Now</a>
+    </div>
+
+    <div class="card">
+      <h3>🗂️ View Uploads</h3>
+      <p class="muted mt-2">
+        Explore the uploaded waste reports submitted by other citizens in your city.
+      </p>
+      <a href="/uploads" class="btn mt-3">View Reports</a>
+    </div>
+  </section>
+
+
+  <!-- Call-to-action Section -->
+  <section class="card center mt-6">
+    <h2>🚀 Be Part of the Change</h2>
+    <p class="muted mt-2 max-w-sm">
+      Every citizen is a waste generator. Let’s make sure every citizen is also 
+      a waste manager. Together, we can close the gap of 37,000+ tonnes of 
+      unaccounted waste every day.
+    </p>
+    <div class="mt-4">
+      <a href="/training" class="btn">Get Started Now</a>
+    </div>
+  </section>
+{% endblock %}

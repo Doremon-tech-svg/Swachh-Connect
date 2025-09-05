@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="card center">
+    <h2>🛠️ Admin Panel</h2>
+    <p class="muted">Overview of citizen participation and reported waste uploads.</p>
+  </section>
+
+  <!-- Stats Grid -->
+  <section class="grid grid-2 mt-6">
+    <div class="card center">
+      <h3>📚 Training Completed</h3>
+      <p class="mt-2"><strong>{{ training_completed }}</strong> citizens</p>
+    </div>
+
+    <div class="card center">
+      <h3>🎓 Certificates Issued</h3>
+      <p class="mt-2"><strong>{{ certificates_issued }}</strong> citizens</p>
+    </div>
+
+    <div class="card center">
+      <h3>📸 Reports Submitted</h3>
+      <p class="mt-2"><strong>{{ reports_count }}</strong> reports</p>
+      <a href="/uploads" class="btn mt-2">View Uploads</a>
+    </div>
+  </section>
+
+  <!-- Reports Table -->
+  <section class="card mt-6">
+    <h3>📑 Waste Reports (Latest Uploads)</h3>
+    {% if reports %}
+      <table style="width:100%; margin-top:12px; border-collapse:collapse;">
+        <thead>
+          <tr style="background:#f0fdf4;">
+            <th style="text-align:left; padding:8px;">File</th>
+            <th style="text-align:left; padding:8px;">Preview</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in reports %}
+          <tr style="border-top:1px solid #eee;">
+            <td style="padding:8px;">{{ r }}</td>
+            <td style="padding:8px;">
+              <a href="{{ url_for('uploaded_file', filename=r) }}" target="_blank" class="inline">View</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="muted mt-2">No reports have been submitted yet.</p>
+    {% endif %}
+  </section>
+{% endblock %}

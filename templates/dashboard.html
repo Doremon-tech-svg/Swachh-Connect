@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="card center">
+    <h2>👤 Citizen Dashboard</h2>
+    <p class="muted">Track your progress and contributions on Swachh Connect.</p>
+  </section>
+
+  <section class="grid grid-2 mt-6">
+    <div class="card center">
+      <h3>📚 Training Status</h3>
+      {% if training_completed %}
+        <p class="alert success mt-2">✅ Completed</p>
+      {% else %}
+        <p class="alert error mt-2">❌ Not Completed</p>
+        <a href="/training" class="btn mt-2">Start Training</a>
+      {% endif %}
+    </div>
+
+    <div class="card center">
+      <h3>🎓 Certificate</h3>
+      {% if certificate_earned %}
+        <p class="alert success mt-2">✅ Earned</p>
+        <a href="/quiz" class="btn mt-2">View Certificate</a>
+      {% else %}
+        <p class="alert error mt-2">❌ Not Yet Earned</p>
+        <a href="/quiz" class="btn mt-2">Take Quiz</a>
+      {% endif %}
+    </div>
+
+    <div class="card center">
+      <h3>📸 Reports Submitted</h3>
+      <p class="mt-2"><strong>{{ report_count }}</strong> reports submitted</p>
+      <a href="/report" class="btn mt-2">Submit New Report</a>
+    </div>
+
+    <div class="card center">
+      <h3>🗂️ View All Uploads</h3>
+      <p class="mt-2">Browse the gallery of reported waste photos.</p>
+      <a href="/uploads" class="btn mt-2">View Reports</a>
+    </div>
+  </section>
+{% endblock %}

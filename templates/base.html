@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Swachh Connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+  <div class="bar">
+    <h1>Swachh Connect</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/training">Training</a>
+      <a href="/quiz">Quiz</a>
+      <a href="/report">Report</a>
+      <a href="/uploads">Uploads</a>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/admin">Admin</a>
+    </nav>
+  </div>
+</header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2025 Swachh Connect</p>
+    </footer>
+</body>
+</html>

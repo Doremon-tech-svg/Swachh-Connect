@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Waste Management Quiz</h2>
+<form method="POST">
+    <p>Q1. Food waste belongs to?</p>
+    <input type="radio" name="q1" value="wet"> Wet
+    <input type="radio" name="q1" value="dry"> Dry
+    <input type="radio" name="q1" value="hazardous"> Hazardous
+
+    <p>Q2. Plastic bottle belongs to?</p>
+    <input type="radio" name="q2" value="wet"> Wet
+    <input type="radio" name="q2" value="dry"> Dry
+    <input type="radio" name="q2" value="hazardous"> Hazardous
+
+    <p>Q3. Batteries belong to?</p>
+    <input type="radio" name="q3" value="wet"> Wet
+    <input type="radio" name="q3" value="dry"> Dry
+    <input type="radio" name="q3" value="hazardous"> Hazardous
+
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+
+{% if error %}
+    <p style="color:red">{{ error }}</p>
+{% endif %}
+
+{% if score is defined %}
+    <p>Your Score: {{ score }}/3</p>
+{% endif %}
+{% endblock %}
